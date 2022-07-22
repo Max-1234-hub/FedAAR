@@ -1,6 +1,6 @@
 ## FedAAR
 
-This repository is an official PyTorch implementation of the paper "FedAAR: A Novel Federated Learning Framework for Animal Activity Recognition with Wearable Sensors".
+This repository is an official PyTorch implementation of the paper "__FedAAR: A Novel Federated Learning Framework for Animal Activity Recognition with Wearable Sensors__".
 
 ## Requirements
 
