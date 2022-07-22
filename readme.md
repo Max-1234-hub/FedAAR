@@ -16,6 +16,7 @@ The reference is _Kamminga, J. W., Janßen, L. M., Meratnia, N., & Havinga, P. J
 
 ### 2. Processed data:
 The folder `data` contains the three processed datasets that are used in our experiment, i.e., `Datasets_Fed_SL`, `Datasets_Fed_SL-1`, and `Datasets_Fed_SL-2`. Each one has split the original data into training and test data, where training data are from five horses and test data are from the remaining horse.
+In particular, since the data in subfolders `./Datasets_Fed_SL/Test/`,  `./Datasets_Fed_SL-1/Test/`, and `./Datasets_Fed_SL-2/Test/` are too big to be uploaded. Thus please click the click [Data_FedAAR_inGithub](https://drive.google.com/drive/folders/1ckWI1HaswGVwvcRoKbrMR7cE9AMbiobY?usp=sharing) to find the `Test` subfolders.
 
 ### 3. train the model
 
