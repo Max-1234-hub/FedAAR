@@ -12,7 +12,7 @@ This is my experiment eviroument
 ### 1. Original dataset
 I used a public dataset (i.e., data from six horses and activities) that are avaliable at
 https://doi.org/10.4121/uuid:2e08745c-4178-4183-8551-f248c992cb14. 
-The reference is __Kamminga, J. W., Janßen, L. M., Meratnia, N., & Havinga, P. J. (2019). Horsing Around—A Dataset Comprising Horse Movement. Data, 4(4), 131..
+The reference is __Kamminga, J. W., Janßen, L. M., Meratnia, N., & Havinga, P. J. (2019). Horsing Around—A Dataset Comprising Horse Movement. Data, 4(4), 131.__.
 
 ### 2. Processed data:
 "Data" folder contains the processed dataset, i.e., Datasets_Fed_SL, Datasets_Fed_SL-1, and Datasets_Fed_SL-2. Each one has split the original data into training and test data, where training data are from five horses and test data are from the remaining horse.
