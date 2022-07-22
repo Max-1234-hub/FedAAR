@@ -15,7 +15,7 @@ https://doi.org/10.4121/uuid:2e08745c-4178-4183-8551-f248c992cb14.
 The reference is _Kamminga, J. W., Janßen, L. M., Meratnia, N., & Havinga, P. J. (2019). Horsing Around—A Dataset Comprising Horse Movement. Data, 4(4), 131._.
 
 ### 2. Processed data:
-The folder `Data` contains the processed dataset, i.e., `Datasets_Fed_SL`, `Datasets_Fed_SL-1`, and `Datasets_Fed_SL-2`. Each one has split the original data into training and test data, where training data are from five horses and test data are from the remaining horse.
+The folder `Data` contains the three processed datasets that are used in our experiment, i.e., `Datasets_Fed_SL`, `Datasets_Fed_SL-1`, and `Datasets_Fed_SL-2`. Each one has split the original data into training and test data, where training data are from five horses and test data are from the remaining horse.
 
 ### 3. train the model
 
