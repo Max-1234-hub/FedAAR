@@ -289,34 +289,6 @@ def communication(args, server_model, models, client_weights, features_class, n_
         
     return server_model, models, Global_features
 
-def plot_figure(title, List1, List2, List3, List4, List5, Test_List):
-    List1 = [sum(List1[:i])/i for i in range(1,len(List1)+1)]
-    List2 = [sum(List2[:i])/i for i in range(1,len(List2)+1)]
-    List3 = [sum(List3[:i])/i for i in range(1,len(List3)+1)]
-    List4 = [sum(List4[:i])/i for i in range(1,len(List4)+1)]
-    List5 = [sum(List5[:i])/i for i in range(1,len(List5)+1)]
-    Test_List = [sum(Test_List[:i])/i for i in range(1,len(Test_List)+1)]
-    font = {'weight' : 'normal', 'size'   : 20}
-    plt.figure(figsize=(12,9))
-    plt.title(title,font)
-    index = list(range(1,len(List1)+1))
-    plt.plot(index,List1,color='skyblue',label='Train_C1', linewidth = '2')
-    plt.plot(index,List2,color='seagreen',label='Train_C2', linewidth = '2')
-    plt.plot(index,List3,color='mediumpurple',label='Train_C3', linewidth = '2')
-    plt.plot(index,List4,color='darksalmon',label='Train_C4', linewidth = '2')
-    plt.plot(index,List5,color='gold',label='Train_C5', linewidth = '2')
-    plt.plot(index,Test_List,color='red',label='Test', linewidth = '3')
-    plt.legend(fontsize=16)
-    plt.xticks(fontsize=12)
-    plt.yticks(fontsize=12)
-    plt.grid()
-    plt.xlim(0,100)
-    plt.xlabel('n_iter',font)
-    plt.ylabel(title,font)
-
-    savedpath = os.path.join(temp_PATH_2,'{}_curve.png'.format(title))
-    plt.savefig(savedpath)
-    # plt.show()
 
 def setup_seed(seed):
     torch.manual_seed(seed)
@@ -479,9 +451,7 @@ if __name__ == '__main__':
     print('Predicted values: {}'.format(predictions[best_epoch]), file=f)
     
     
-    ###Displaying the accuracy and loss of train and test dataset
-    plot_figure('Accuracy', Train_accuracy[::5], Train_accuracy[1::5], Train_accuracy[2::5], Train_accuracy[3::5], Train_accuracy[4::5], Test_accuracy)
-
+   
     # Save checkpoint
     print(' Saving checkpoints to {}...'.format(SAVE_PATH), flush=True)
     torch.save({'best_model': best_model.state_dict()}, SAVE_PATH)
