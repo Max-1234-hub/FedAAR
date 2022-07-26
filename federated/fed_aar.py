@@ -186,32 +186,32 @@ def get_grads(model, server_model):
             grads.append(model.state_dict()[key].data.clone().detach().flatten() - server_model.state_dict()[key].data.clone().detach().flatten())
     return torch.cat(grads)
     
-def pcgrad(domain_grads):
+def GRA(grads):
     """ Projecting conflicting gradients (PCGrad). """
-    task_order = list(range(len(domain_grads)))
+    client_order = list(range(len(grads)))
 
-    # Run tasks in random order
-    shuffle(task_order)
+    # Run clients in random order
+    shuffle(client_order)
 
-    # Initialize task gradients
-    grad_pc = [g.clone() for g in domain_grads]
+    # Initialize client gradients
+    grad_intial = [g.clone() for g in grads]
 
-    for i in task_order:
+    for i in client_order:
 
-        # Run other tasks
-        other_tasks = [j for j in task_order if j != i]
+        # Run other clients
+        other_clients = [j for j in client_order if j != i]
 
-        for j in other_tasks:
-            grad_j = domain_grads[j]
+        for j in other_clients:
+            grad_j = grads[j]
 
             # Compute inner product and check for conflicting gradients
-            inner_prod = torch.dot(grad_pc[i], grad_j)
-            cos = torch.cosine_similarity(grad_pc[i][None,:], grad_j[None,:])[0]
+            inner_prod = torch.dot(grad_intial[i], grad_j)
+            cos = torch.cosine_similarity(grad_intial[i][None,:], grad_j[None,:])[0]
             if cos < 0:
                 # Sustract the conflicting component
-                grad_pc[i] -= inner_prod / (grad_j ** 2).sum() * grad_j
+                grad_intial[i] -= inner_prod / (grad_j ** 2).sum() * grad_j
     # Sum task gradients
-    new_grads = torch.stack(grad_pc).mean(0)
+    new_grads = torch.stack(grad_intial).mean(0)
 
     return new_grads
 
@@ -231,7 +231,7 @@ def communication(args, server_model, models, client_weights, features_class, n_
     for model in models:
         Grads.append(get_grads(model, server_model))
         
-    new_grads = pcgrad(Grads)
+    new_grads = GRA(Grads)
     #print(new_grads[:100])
     
     for k, model in enumerate(models):
