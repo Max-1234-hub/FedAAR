@@ -210,7 +210,7 @@ def GRA(grads):
             if cos < 0:
                 # Sustract the conflicting component
                 grad_intial[i] -= inner_prod / (grad_j ** 2).sum() * grad_j
-    # Sum task gradients
+    # Sum client gradients
     new_grads = torch.stack(grad_intial).mean(0)
 
     return new_grads
