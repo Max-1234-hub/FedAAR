@@ -153,31 +153,3 @@ class Feature_map_att(nn.Module):
         gyr_out = self.conv_gyr(excitation)
       
         return f_acc * acc_out.expand_as(f_acc), f_gyr * gyr_out.expand_as(f_gyr), acc_out, gyr_out
-
-net = CaNet(6)
-x = torch.rand(4,1,200,6)
-output, output_cat = net(x)
-
-# for key in net.state_dict().keys():
-#     print(key,net.state_dict()[key].shape)
-    # print(key)
-# layer = []
-# for i in list(net.state_dict().keys()):
-#     idx = i.index('.')
-#     layer.append(i[:idx])
-# print(layer)
-# labels = sorted(set(layer),key=layer.index)
-# print(labels)
-
-# num_l = []
-# for l in labels:
-#     length_l = 0
-#     print(l)
-#     for key in net.state_dict().keys():
-#         if (l in key) and ('num_batches_tracked' not in key):
-#             dims = net.state_dict()[key].shape
-#             length_l += dims.numel()
-#     num_l.append(length_l)
-# print(num_l)
-
-# print(list(net.state_dict().keys())[30][0:idx])
