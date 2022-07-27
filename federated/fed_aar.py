@@ -35,12 +35,12 @@ def prepare_data(args):
     # Prepare data
 
     # Client1
-    C1_trainset     = data_utils.DigitsDataset(data_path='/home/meiluzhu2/mm/data/'+args.data_path+'/Client_1', percent=args.percent, train=True,  transform=None)
-    C2_trainset     = data_utils.DigitsDataset(data_path='/home/meiluzhu2/mm/data/'+args.data_path+'/Client_2', percent=args.percent,  train=True,  transform=None)
-    C3_trainset     = data_utils.DigitsDataset(data_path='/home/meiluzhu2/mm/data/'+args.data_path+'/Client_3', percent=args.percent,  train=True,  transform=None)
-    C4_trainset     = data_utils.DigitsDataset(data_path='/home/meiluzhu2/mm/data/'+args.data_path+'/Client_4', percent=args.percent,  train=True,  transform=None)
-    C5_trainset     = data_utils.DigitsDataset(data_path='/home/meiluzhu2/mm/data/'+args.data_path+'/Client_5', percent=args.percent,  train=True,  transform=None)
-    testset         = data_utils.DigitsDataset(data_path='/home/meiluzhu2/mm/data/'+args.data_path+'/Test', percent=args.percent,  train=False, transform=None)
+    C1_trainset     = data_utils.DigitsDataset(data_path='../data/'+args.data_path+'/Client_1', percent=args.percent, train=True,  transform=None)
+    C2_trainset     = data_utils.DigitsDataset(data_path='../data/'+args.data_path+'/Client_2', percent=args.percent,  train=True,  transform=None)
+    C3_trainset     = data_utils.DigitsDataset(data_path='../data/'+args.data_path+'/Client_3', percent=args.percent,  train=True,  transform=None)
+    C4_trainset     = data_utils.DigitsDataset(data_path='../data/'+args.data_path+'/Client_4', percent=args.percent,  train=True,  transform=None)
+    C5_trainset     = data_utils.DigitsDataset(data_path='../data/'+args.data_path+'/Client_5', percent=args.percent,  train=True,  transform=None)
+    testset         = data_utils.DigitsDataset(data_path='../data/'+args.data_path+'/Test', percent=args.percent,  train=False, transform=None)
 
     C1_train_loader = torch.utils.data.DataLoader(C1_trainset, batch_size=args.batch, shuffle=True)
     C2_train_loader = torch.utils.data.DataLoader(C2_trainset, batch_size=args.batch,  shuffle=True)
