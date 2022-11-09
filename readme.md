@@ -10,7 +10,7 @@ This is my experiment eviroument
 
 ## Details
 ### 1. Original dataset
-I used a public dataset (i.e., data from six horses and activities) that are avaliable at
+I used a public dataset (i.e., data from six horses and activities) that are available at
 https://doi.org/10.4121/uuid:2e08745c-4178-4183-8551-f248c992cb14. 
 The reference is _Kamminga, J. W., Janßen, L. M., Meratnia, N., & Havinga, P. J. (2019). Horsing Around—A Dataset Comprising Horse Movement. Data, 4(4), 131._.
 
